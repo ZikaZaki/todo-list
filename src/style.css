@@ -35,14 +35,14 @@
 
 .section-title {
   width: max-content;
-  padding: 25px 5px;
+  padding: 15px 5px;
 }
 
 .section-title h1,
 h2,
 h3,
 h4 {
-  padding: 10px 0;
+  padding: 5px 0;
   margin: 0;
 }
 
@@ -53,7 +53,6 @@ h4 {
 }
 
 /* ======================================Header Start====================================== */
-
 
 /* =======================================Header End======================================= */
 
@@ -74,7 +73,9 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 65px;
+  align-items: center;
+  padding: 35px;
+  width: 100%;
 }
 
 .todo-list {
@@ -142,9 +143,12 @@ h4 {
   cursor: move;
 }
 
-li.clear-all-btn {
+.clear-all-btn {
+  display: flex;
   background-color: var(--anti-flash-white);
   justify-content: center;
+  align-items: center;
+  height: 4rem;
 }
 
 .clear-all-btn button {
