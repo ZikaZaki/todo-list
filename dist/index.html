@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+<script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script><script defer src="task.bundle.js"></script><script defer src="utils.bundle.js"></script></head>
+<body>
+    <header>
+        <div class="container header">
+
+        </div>
+    </header>
+    <main>
+        <div class="container main-wrapper">
+            <section class="todo">
+                <div class="section-title">
+                    <h2>To-Do List App!</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="todo-list">
+                    <div class="list-reload">
+                        <span>Today's To Do</span><i><ion-icon name="sync-outline"></ion-icon></i>
+                    </div>
+                    <form action="#">
+                        <div class="add-input">
+                            <input type="text" placeholder="Add your list...">
+                            <i><ion-icon name="return-down-back-sharp"></ion-icon></i>
+                        </div>
+                        <div id="todo_list">
+                          <!-- To Do List will be injected dynamically via JavaScript -->
+                        </div>
+                        <div class="clear-all-btn"><button type="submit">Clear all completed</button></div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>    
+    <footer>
+        <div class="container footer">
+
+        </div>
+    </footer>
+    <!-- JavaScript Files -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
