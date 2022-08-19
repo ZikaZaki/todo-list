@@ -1,7 +1,162 @@
-body {
-    background-color: bisque;
+/* Importing the "normalize.css" file which is for resetting all the default css values */
+@import url("./normalize.css");
+
+/* ******Global Variables****** */
+:root {
+  /* Fonts */
+  --sans-serif: sans-serif, 'Lucida Grande', tahoma, verdana, arial;
+  --tahoma: tahoma, 'Lucida Grande', verdana, arial, sans-serif;
+  --verdana: verdana, 'Lucida Grande', tahoma, arial, sans-serif;
+  --open-sans: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;
+
+  /* Colors */
+  --white: #fff;
+  --anti-flash-white: #f1f2f5;
+  --cultured: #f6f6f6;
+  --light-gray: #d3d3d3;
+  --dark-indigo: #2c3e50;
+  --light-indigo: #34495e;
+  --carmine-pink: #ec5242;
 }
 
-.hello {
-    color: red;
+/* **********Global Classes********** */
+
+/* body {
+  background-color: var(--cultured);
+} */
+
+.container {
+  font-family: var(--open-sans);
+  font-style: normal;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
+
+.section-title {
+  width: max-content;
+  padding: 25px 5px;
+}
+
+.section-title h1,
+h2,
+h3,
+h4 {
+  padding: 10px 0;
+  margin: 0;
+}
+
+.title-underline {
+  height: 2.5px;
+  background-color: var(--light-indigo);
+  width: 100%;
+}
+
+/* ======================================Header Start====================================== */
+
+
+/* =======================================Header End======================================= */
+
+/* ===================================Main Wrapper Start=================================== */
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cultured);
+  padding: 65px;
+}
+
+/* ====================================Main Wrapper End==================================== */
+
+/* ==================================To-Do Section Start=================================== */
+.todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 65px;
+}
+
+.todo-list {
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  max-width: 600px;
+  min-width: 300px;
+  width: 100%;
+  height: auto;
+  background-color: var(--white);
+}
+
+.list-reload {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--light-gray);
+  width: 100%;
+  min-height: 4rem;
+  padding: 10px 20px;
+}
+
+.add-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 4rem;
+  border-bottom: 2px solid var(--light-gray);
+  padding: 5px 20px;
+}
+
+.add-input input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+
+.todo-list ul {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.todo-list li {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--light-gray);
+  min-height: 4rem;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.todo-list li i:hover {
+  cursor: move;
+}
+
+li.clear-all-btn {
+  background-color: var(--anti-flash-white);
+  justify-content: center;
+}
+
+.clear-all-btn button {
+  border: none;
+  background-color: transparent;
+  opacity: 0.5;
+}
+
+.clear-all-btn button:hover {
+  cursor: pointer;
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ===================================To-Do Section End==================================== */
