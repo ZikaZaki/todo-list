@@ -25,6 +25,11 @@ export default class ToDo {
         //after rendering, add event listeners to the task
         addEventListeners(liElement, this);
 
+        //set checkbox state
+        liElement.querySelector('.completed-checkbox').checked = task.completed;
+        // Set line-through style to the task description if the checkbox is checked
+        liElement.style.textDecoration = task.completed ? "line-through" : "none";
+
         //finally append the liElement to the todo-list
         document.querySelector("#draggable_list").appendChild(liElement);
     }
@@ -35,8 +40,10 @@ export default class ToDo {
             .forEach((item, index) => {
                 item.setAttribute("value", index + 1);
                 item.querySelector(".task-description").setAttribute("name", index + 1);
-                this.todoList[index].index = index + 1;
+                console.log("im here");
             });
+        // Must have its own forEach loop because of the way the DOM is structured   
+        this.todoList.forEach((task, index) => task.index = index + 1);    
     }
 
     addTask(description){
@@ -90,17 +97,18 @@ export default class ToDo {
     clearAllCompleted(){
         //remove all completed tasks from the array list
         this.todoList = this.todoList.filter(task => !task.completed);
-        
+
         //remove all completed tasks from the page
-        [...document.querySelectorAll(".draggable-item")]
-            .forEach(item => {
+        document.querySelectorAll(".draggable-item").forEach((item) => {
                 if(item.querySelector(".completed-checkbox").checked){
                     item.remove();
+                    // console.log("item is removed");
                 }
             }
         );
+        // console.log([...document.querySelectorAll(".draggable-item")]);
         
-        //update list index of the remaining tasks
+        // //update list index of the remaining tasks
         this.updateIndexes();
         
         // update local storage

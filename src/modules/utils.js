@@ -1,6 +1,10 @@
 export function addEventListeners(liElement, todoObj){
-  liElement.querySelector(".completed-checkbox").addEventListener("click", function(){
-      liElement.classList.toggle("completed");
+  liElement.querySelector(".completed-checkbox").addEventListener("change", function(){
+    // Set line-through style to the task description if the checkbox is checked
+    liElement.style.textDecoration = this.checked ? "line-through" : "none";
+ 
+    // Set the value of completed property in the array list
+    todoObj.todoList[liElement.value - 1].completed = this.checked;
   } );
   
   liElement.querySelector(".task-description").addEventListener("focus", function(){
@@ -12,7 +16,6 @@ export function addEventListeners(liElement, todoObj){
   } );
 
   liElement.querySelector(".task-description").addEventListener("focusout", function(){
-      // liElement.classList.add("editing");
       liElement.style.backgroundColor = 'transparent';
       this.style.cursor = 'default';
       setTimeout(() => { 
@@ -21,7 +24,7 @@ export function addEventListeners(liElement, todoObj){
       }, 100);
 
       // If description is empty, remove the task using remove() function 
-      if(this.value.trim() == ''){
+      if(this.value.trim() === ''){
           // liElement.remove(); 
           todoObj.removeTask(liElement);
       }else {
