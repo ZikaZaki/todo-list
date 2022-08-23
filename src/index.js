@@ -1,6 +1,6 @@
 // import _ from 'lodash';
 import './style.css';
-import ToDo from './crud.js';
+import ToDo from './modules/crud.js';
 
 /* Global Variables */
 const todo = new ToDo();
