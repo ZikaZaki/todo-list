@@ -16,7 +16,7 @@
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-blueviolet)](https://livedemo.com)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://zikazaki.github.io/todo-list/dist/index.html)
 
 ## Getting Started
 
