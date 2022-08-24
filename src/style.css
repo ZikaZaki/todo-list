@@ -94,7 +94,7 @@ h4 {
 }
 
 .list-icon {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .list-icon:hover {
@@ -177,7 +177,7 @@ h4 {
 }
 
 .draggable-list li.over .draggable {
-    background-color: #eaeaea;
+  background-color: #eaeaea;
 }
 
 .task-description {
@@ -207,11 +207,11 @@ h4 {
 }
 
 .clear-completed {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
 }
 
 .clear-completed button {
@@ -227,8 +227,9 @@ h4 {
   opacity: 1;
   text-decoration: underline;
 }
+
 .editting {
-  background-Color: '#ffeea8';
+  background-color: #ffeea8;
 }
 
 /* ===================================To-Do Section End==================================== */
