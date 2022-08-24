@@ -39,7 +39,7 @@ export default function addEventListeners(liElement, todoObj) {
     will cause an error due to conflicting with another event.
      */
     if (e.keyCode === 13) {
-        e.target.blur();
+      e.target.blur();
     }
   });
 

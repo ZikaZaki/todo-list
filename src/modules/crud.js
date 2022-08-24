@@ -63,7 +63,7 @@ export default class ToDo {
 
   removeTask(liElement) {
     // get the index of the task to be removed
-    const taskIndex = liElement.value-1;
+    const taskIndex = liElement.value - 1;
 
     // remove task from the array list
     this.todoList.splice(taskIndex, 1);
@@ -100,7 +100,7 @@ export default class ToDo {
         item.remove();
       }
     });
-    
+
     // update list index of the remaining tasks
     this.updateIndexes();
     // update local storage
