@@ -12,11 +12,11 @@
 - **Technologies used**: NPM & Webpack.
 - **Tools**: Git, GitHub, VS Code, & Chrome Browser.
 
-## Live Demo (Deployed on GitHub Pages)
+## Live Demo (Deployed on GitHub Pages with SSL)
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-blueviolet)](https://livedemo.com)
 
-[Live Demo Link](https://zikazaki.github.io/todo-list/dist/index.html)
+[Live Demo Link](https://zikazaki.github.io/todo-list/dist/)
 
 ## Getting Started
 
