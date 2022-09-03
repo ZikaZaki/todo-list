@@ -5,7 +5,7 @@ import ToDo from './crud.js';
 
 const todo = new ToDo();
 
-describe('ToDo-List: Add & Remove', () => {
+describe('ToDo-List: All CRUD Functionalities', () => {
   document.body.innerHTML = `
     <section class="todo-section">
                 <div class="section-title">
@@ -76,6 +76,65 @@ describe('ToDo-List: Add & Remove', () => {
     test('Test DOM to have only 5 tasks left', () => {
       const liElements = document.querySelectorAll('.draggable-item');
       expect(liElements).toHaveLength(5);
+    });
+  });
+
+  // Testing the Update functionality
+  describe('Update Functionality', () => {
+    // Test Case 1: Check if the task is updated in the todoList
+    test('Test ToDo-List to have the first task updated', () => {
+      const liElements = document.querySelectorAll('.draggable-item');
+      liElements[0].querySelector('.task-description').value = 'Test Task 1 Updated';
+      liElements[0].querySelector('.completed-checkbox').checked = true;
+      todo.updateTask(liElements[0]);
+      expect(todo.todoList[0].description).toBe('Test Task 1 Updated');
+      expect(todo.todoList[0].completed).toBe(true);
+    });
+
+    // Test Case 2: Check if the first task is updated in the LocalStorage
+    test('Test LocalStorage to have teh first task updated', () => {
+      const todoList = JSON.parse(localStorage.getItem('todo-list'));
+      expect(todoList[0].description).toBe('Test Task 1 Updated');
+      expect(todoList[0].completed).toBe(true);
+    });
+
+    // Test Case 3: Check if the first task is updated in the DOM
+    test('Test DOM to have the first task updated', () => {
+      const liElements = document.querySelectorAll('.draggable-item');
+      const taskDescription = liElements[0].querySelector('.task-description').value;
+      const taskStatus = liElements[0].querySelector('.completed-checkbox').checked;
+      expect(taskDescription).toBe('Test Task 1 Updated');
+      expect(taskStatus).toBe(true);
+    });
+  });
+
+   // Testing the ClearAllCompleted functionality
+   describe('ClearAllCompleted Functionality', () => {
+    // Test Case 1: Check if the completed tasks are removed from the todoList
+    test('Test ToDo-List to have the completed tasks removed', () => {
+      const liElements = document.querySelectorAll('.draggable-item');
+      liElements[0].querySelector('.completed-checkbox').checked = true;
+      liElements[1].querySelector('.completed-checkbox').checked = false;
+      liElements[2].querySelector('.completed-checkbox').checked = true;
+      liElements[3].querySelector('.completed-checkbox').checked = true;
+      liElements[4].querySelector('.completed-checkbox').checked = false;
+      todo.updateTask(liElements[0]);
+      todo.updateTask(liElements[2]);
+      todo.updateTask(liElements[3]);
+      todo.clearAllCompleted();
+      expect(todo.todoList.length).toBe(2);
+    });
+
+    // Test Case 2: Check if the completed tasks are removed from the LocalStorage
+    test('Test LocalStorage to have teh first task updated', () => {
+      const todoList = JSON.parse(localStorage.getItem('todo-list'));
+      expect(todoList.length).toBe(2);
+    });
+
+    // Test Case 3: Check if the completed tasks are removed from the DOM
+    test('Test DOM to have the first task updated', () => {
+      const liElements = document.querySelectorAll('.draggable-item');
+      expect(liElements.length).toBe(2);
     });
   });
 });
