@@ -1,4 +1,8 @@
 # .gitignore
-node_modules/
-coverage/
 .vscode/
+.coverage
+coverage*
+coverage/
+node_modules/
+/coverage.data
+/coverage/
