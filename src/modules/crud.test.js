@@ -6,7 +6,7 @@ import ToDo from './crud.js';
 const todo = new ToDo();
 
 describe('ToDo List Add & Remove', () => {
-    document.body.innerHTML = `
+  document.body.innerHTML = `
     <section class="todo-section">
                 <div class="section-title">
                     <h2>To-Do List App!</h2>
@@ -31,29 +31,28 @@ describe('ToDo List Add & Remove', () => {
                 </div>
             </section>`;
 
-    describe('Add', () => {
-        // Test Case 1: Check if the task is added to the todoList
-        test('Test ToDo-List to have 3 items', () => {
-            todo.addTask('Test Task 1');
-            todo.addTask('Test Task 2');
-            todo.addTask('Test Task 3');
-            expect(todo.todoList.length).toBe(3);
-        });
-
-        // Test Case 2: Check if the tasks are added to the LocalStorage
-        test('Test LocalStorage to have 6 items', () => {
-            todo.addTask('Test Task 4');
-            todo.addTask('Test Task 5');
-            const todoList = JSON.parse(localStorage.getItem('todo-list'));
-            expect(todoList.length).toBe(5);
-        });
-
-        // Test Case 3: Check if the tasks are added to the DOM
-        test('Test DOM to have 9 items', () => {
-            todo.addTask('Test Task 6');
-            const liElements = document.querySelectorAll('.draggable-item');
-            expect(liElements).toHaveLength(6);
-        });
+  describe('Add', () => {
+    // Test Case 1: Check if the task is added to the todoList
+    test('Test ToDo-List to have 3 items', () => {
+      todo.addTask('Test Task 1');
+      todo.addTask('Test Task 2');
+      todo.addTask('Test Task 3');
+      expect(todo.todoList.length).toBe(3);
     });
-});
 
+    // Test Case 2: Check if the tasks are added to the LocalStorage
+    test('Test LocalStorage to have 6 items', () => {
+      todo.addTask('Test Task 4');
+      todo.addTask('Test Task 5');
+      const todoList = JSON.parse(localStorage.getItem('todo-list'));
+      expect(todoList.length).toBe(5);
+    });
+
+    // Test Case 3: Check if the tasks are added to the DOM
+    test('Test DOM to have 9 items', () => {
+      todo.addTask('Test Task 6');
+      const liElements = document.querySelectorAll('.draggable-item');
+      expect(liElements).toHaveLength(6);
+    });
+  });
+});
