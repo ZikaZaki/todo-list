@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1662165566183" clover="3.2.0">
-  <project timestamp="1662165566183" name="All files">
+<coverage generated="1662166301708" clover="3.2.0">
+  <project timestamp="1662166301708" name="All files">
     <metrics statements="63" coveredstatements="33" conditionals="10" coveredconditionals="1" methods="20" coveredmethods="9" elements="93" coveredelements="43" complexity="0" loc="63" ncloc="63" packages="1" files="3" classes="3"/>
     <file name="crud.js" path="C:\Github\Microverse\Module 2\My-ToDo-List\todo-list\src\modules\crud.js">
       <metrics statements="36" coveredstatements="24" conditionals="4" coveredconditionals="1" methods="11" coveredmethods="7"/>
