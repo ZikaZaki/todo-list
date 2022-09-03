@@ -5,7 +5,7 @@ import ToDo from './crud.js';
 
 const todo = new ToDo();
 
-describe('ToDo List Add & Remove', () => {
+describe('ToDo-List: Add & Remove', () => {
   document.body.innerHTML = `
     <section class="todo-section">
                 <div class="section-title">
@@ -31,9 +31,10 @@ describe('ToDo List Add & Remove', () => {
                 </div>
             </section>`;
 
-  describe('Add', () => {
-    // Test Case 1: Check if the task is added to the todoList
-    test('Test ToDo-List to have 3 items', () => {
+  // Testing the Add functionality
+  describe('Add Functionality', () => {
+    // Test Case 1: Check if the tasks are added to the todoList
+    test('Test ToDo-List to have 3 tasks', () => {
       todo.addTask('Test Task 1');
       todo.addTask('Test Task 2');
       todo.addTask('Test Task 3');
@@ -41,7 +42,7 @@ describe('ToDo List Add & Remove', () => {
     });
 
     // Test Case 2: Check if the tasks are added to the LocalStorage
-    test('Test LocalStorage to have 6 items', () => {
+    test('Test LocalStorage to have 2 tasks', () => {
       todo.addTask('Test Task 4');
       todo.addTask('Test Task 5');
       const todoList = JSON.parse(localStorage.getItem('todo-list'));
@@ -49,10 +50,32 @@ describe('ToDo List Add & Remove', () => {
     });
 
     // Test Case 3: Check if the tasks are added to the DOM
-    test('Test DOM to have 9 items', () => {
+    test('Test DOM to have 6 tasks', () => {
       todo.addTask('Test Task 6');
       const liElements = document.querySelectorAll('.draggable-item');
       expect(liElements).toHaveLength(6);
+    });
+  });
+
+  // Testing the Remove functionality
+  describe('Remove Functionality', () => {
+    // Test Case 1: Check if the task is removed from the todoList
+    test('Test ToDo-List to have only 5 tasks left', () => {
+      const liElements = document.querySelectorAll('.draggable-item');
+      todo.removeTask(liElements[3]);
+      expect(todo.todoList.length).toBe(5);
+    });
+
+    // Test Case 2: Check if the task is removed from the LocalStorage
+    test('Test LocalStorage to have only 5 tasks left', () => {
+      const todoList = JSON.parse(localStorage.getItem('todo-list'));
+      expect(todoList.length).toBe(5);
+    });
+
+    // Test Case 3: Check if the task is removed from the DOM
+    test('Test DOM to have only 5 tasks left', () => {
+      const liElements = document.querySelectorAll('.draggable-item');
+      expect(liElements).toHaveLength(5);
     });
   });
 });
