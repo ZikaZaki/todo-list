@@ -108,8 +108,8 @@ describe('ToDo-List: All CRUD Functionalities', () => {
     });
   });
 
-   // Testing the ClearAllCompleted functionality
-   describe('ClearAllCompleted Functionality', () => {
+  // Testing the ClearAllCompleted functionality
+  describe('ClearAllCompleted Functionality', () => {
     // Test Case 1: Check if the completed tasks are removed from the todoList
     test('Test ToDo-List to have the completed tasks removed', () => {
       const liElements = document.querySelectorAll('.draggable-item');
