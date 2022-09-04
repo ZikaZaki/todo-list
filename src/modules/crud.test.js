@@ -1,6 +1,5 @@
 import ToDo from './crud.js';
 /* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
 /* eslint-disable no-restricted-globals */
 
 const todo = new ToDo();
